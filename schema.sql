@@ -30,6 +30,7 @@ CREATE TABLE quotefavorites (
   PRIMARY KEY (id)
 );
 
+
 -- INSERT INTO quotefavorites(user, quote) VALUES ("suttonk@sbcglobal.net", "Deep in the human unconscious is a pervasive need for a logical universe that makes sense. But the real universe is always one step beyond logic.");
 -- INSERT INTO quotefavorites(user, quote) VALUES ("suttonk@sbcglobal.net", "It is impossible to live in the past, difficult to live in the present and a waste to live in the future.");
 -- INSERT INTO quotefavorites(user, quote) VALUES ("suttonk@sbcglobal.net", "A process cannot be understood by stopping it. Understanding must move with the flow of the process, must join it and flow with it.");
