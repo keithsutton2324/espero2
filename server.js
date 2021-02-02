@@ -13,9 +13,7 @@ var db = require("./models");
 var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// KJS
 app.set("view engine", "handlebars");
-// KJS
 app.use(express.static("public"));
 app.engine("handlebars", expHandlebars({defaultLayout:"main"}))
 

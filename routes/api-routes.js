@@ -59,7 +59,6 @@ module.exports = function (app) {
     })
   })
 
-  // KJS
   // Retrieve all quotefavorites
   app.get("/api/quotefavorites", function (req, res) {
     connection.query("SELECT * FROM quotefavorites;", function (err, data) {
@@ -70,5 +69,4 @@ module.exports = function (app) {
       res.json(data);
     });
   });
-  // KJS
 };

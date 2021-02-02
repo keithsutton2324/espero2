@@ -37,13 +37,11 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
-  // KJS
   /*
   // Use Handlebars to render the main index.html page with the quotefavorites in it.
   app.get("/favQuotes", function (req, res) {
     db.favQuote.findAll({}).then((favQuotes) => {
       res.render("favQuotes", {favQuotes});
-      console.log("KJS----->  app.get(/favQuotes: ", favQuotes)
     })
   });
   */
@@ -106,5 +104,4 @@ connection.connect(function(err) {
 
     });
   });
-// KJS
 };
