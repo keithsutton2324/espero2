@@ -1,40 +1,37 @@
 {
-  "name": "motivate-me",
+  "name": "quote_favorites",
   "version": "1.0.0",
-  "description": "Members: Ahmed, Shane, Natan, Keith, Vijay",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Aali0/motivate-me.git"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Aali0/motivate-me/issues"
-  },
-  "homepage": "https://github.com/Aali0/motivate-me#readme",
   "dependencies": {
     "axios": "^0.21.1",
-    "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-handlebars": "^5.2.0",
+    "express-handlebars": "^3.1.0",
     "express-session": "^1.17.1",
     "if-env": "^1.0.4",
+    "mysql": "^2.16.0",
     "mysql2": "^2.2.5",
-    "nodemon": "^2.0.7",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "sequelize": "^6.4.0",
+    "sequelize": "^6.5.0",
     "sequelize-cli": "^6.2.0"
   },
-  "devDependencies": {
-    "eslint": "^7.17.0"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keithsutton2324/Quote-Favorites.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/keithsutton2324/Quote-Favorites/issues"
+  },
+  "homepage": "https://github.com/keithsutton2324/Quote-Favorites#readme",
+  "devDependencies": {},
+  "description": "Members: Ahmed, Shane, Natan, Keith, Vijay"
 }

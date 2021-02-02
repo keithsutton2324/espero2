@@ -23,6 +23,24 @@ CREATE TABLE users (
                         PRIMARY KEY (id)
                         );
 
+CREATE TABLE quotefavorites (
+  id int NOT NULL AUTO_INCREMENT,
+  -- user varchar(255) NOT NULL, --
+  quote varchar(255) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+
+-- INSERT INTO quotefavorites(user, quote) VALUES ("suttonk@sbcglobal.net", "Deep in the human unconscious is a pervasive need for a logical universe that makes sense. But the real universe is always one step beyond logic.");
+-- INSERT INTO quotefavorites(user, quote) VALUES ("suttonk@sbcglobal.net", "It is impossible to live in the past, difficult to live in the present and a waste to live in the future.");
+-- INSERT INTO quotefavorites(user, quote) VALUES ("suttonk@sbcglobal.net", "A process cannot be understood by stopping it. Understanding must move with the flow of the process, must join it and flow with it.");
+-- INSERT INTO quotefavorites(user, quote) VALUES ("suttonk@sbcglobal.net", "Any road followed precisely to its end leads precisely nowhere. Climb the mountain just a little bit to test that it is a mountain. From the top of the mountain, you cannot see the mountain.");
+
+INSERT INTO quotefavorites(quote) VALUES ("Deep in the human unconscious is a pervasive need for a logical universe that makes sense. But the real universe is always one step beyond logic.");
+INSERT INTO quotefavorites(quote) VALUES ("It is impossible to live in the past, difficult to live in the present and a waste to live in the future.");
+INSERT INTO quotefavorites(quote) VALUES ("A process cannot be understood by stopping it. Understanding must move with the flow of the process, must join it and flow with it.");
+INSERT INTO quotefavorites(quote) VALUES ("Any road followed precisely to its end leads precisely nowhere. Climb the mountain just a little bit to test that it is a mountain. From the top of the mountain, you cannot see the mountain.");
+
 
 INSERT INTO categories VALUES(1,'"Push yourself, because no one else is going to do it for you.- unknown"',"Body", "2020-01-23","2020-01-23");
 INSERT INTO categories VALUES(2,'"The hard days are what make you stronger. - Aly Raisman"', "Body", "2020-01-23","2020-01-23");

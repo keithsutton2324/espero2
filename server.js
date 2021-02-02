@@ -13,6 +13,9 @@ var db = require("./models");
 var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+// KJS
+app.set("view engine", "handlebars");
+// KJS
 app.use(express.static("public"));
 app.engine("handlebars", expHandlebars({defaultLayout:"main"}))
 
@@ -30,8 +33,6 @@ var routes = require("./routes");
 
 // Requiring our routes
 app.use(routes);
-require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {
