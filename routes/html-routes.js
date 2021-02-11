@@ -56,35 +56,13 @@ module.exports = function (app) {
     })
   });
   */
-var mysql = require("mysql2");
 
- var connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "password",
-  database: "quotes"
-});
-
-connection.connect(function(err) {
-  if (err) {
-    console.error("error connecting: " + err.stack);
-    return;
-  }
-
-  console.log("connected as id " + connection.threadId);
-});
-
- app.get("/favQuotes", function(req, res) {
-  connection.query("SELECT * FROM quotefavorites;", function(err, data) {
-    if (err) {
-      return res.status(500).end();
-    }
-    console.log("Get",data)
+app.get("/favQuotes", function(req, res) {
+  db.favQuote.findAll({}).then((data) => {
     res.render("favQuotes", { quotefavorites: data });
-  });
+  })
 });
-
+/*
   // Create a new quotefavorite
   app.post("/api/quotefavorites", function (req, res) {
     console.log("User data", req.body.quote)
@@ -115,4 +93,5 @@ connection.connect(function(err) {
 
     });
   });
+*/
 };
