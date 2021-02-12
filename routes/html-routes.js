@@ -21,7 +21,7 @@ module.exports = function (app) {
     if (req.user) {
       res.redirect("/members");
     }
-    else{
+    else {
       //res.sendFile(path.join(__dirname, "../public/signup.html"));
       res.sendFile(path.join(__dirname, "../public/login.html"));
     }
@@ -48,50 +48,35 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
-  /*
-  // Use Handlebars to render the main index.html page with the quotefavorites in it.
+  // Favorite Quotes routes
   app.get("/favQuotes", function (req, res) {
-    db.favQuote.findAll({}).then((favQuotes) => {
-      res.render("favQuotes", {favQuotes});
+    db.favQuote.findAll({ raw: true }).then((data) => {
+
+      var hbsdata = {}
+      hbsdata.dataList = data
+      //console.log("KJS----- Test get route >findAll, User data:", hbsdata);
+      //res.render("favQuotes", { quotefavorites: data });
+      res.render("favQuotes", hbsdata);
     })
   });
-  */
 
-app.get("/favQuotes", function(req, res) {
-  db.favQuote.findAll({}).then((data) => {
-    res.render("favQuotes", { quotefavorites: data });
-  })
-});
-/*
   // Create a new quotefavorite
   app.post("/api/quotefavorites", function (req, res) {
-    console.log("User data", req.body.quote)
-    connection.query("INSERT INTO quotefavorites (quote) VALUES (?)", [req.body.quote], function (err, result) {
-      if (err) {
-        return res.status(500).end();
-      }
-
-      // Send back the ID of the new quote
-      res.json({ id: result.insertId });
-      console.log({ id: result.insertId });
-    });
+    //console.log("KJS----->create, User data:", req.body.quote)
+    db.favQuote.create({ user: req.params.user, quote: req.body.quote });
+    res.redirect("/favQuotes");
   });
 
   // Delete a quote
   app.delete("/api/quotefavorites/:id", function (req, res) {
-    connection.query("DELETE FROM quotefavorites WHERE id = ?", [req.params.id], function (err, result) {
-      if (err) {
-        // If an error occurred, send a generic server failure
-        return res.status(500).end();
+    db.favQuote.destroy({
+      where: {
+        id: req.params.id
       }
-      else if (result.affectedRows === 0) {
-        // If no rows were changed, then the ID must not exist, so 404
-        return res.status(404).end();
-      }
-      console.log("Delete")
-      res.status(200).end();
-
+    })
+    .then(function (dbPost) {
+      res.json(dbPost);
     });
   });
-*/
+
 };

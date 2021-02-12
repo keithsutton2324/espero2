@@ -4,21 +4,20 @@
   <br><br>
 </nav>
 
-<header class="bg-primary text-center">
+<main class="bg-primary text-center">
   <h1>Quote Favorites</h1>
   <br><br>
   <div class="cards bg-secondary text-white text-left">
+    {{#each dataList}}
+    <li>
+      <p>
 
-    <ul>
-      {{#each quotefavorites}}
-      <li>
-        <p>
-          {{this.id}}. {{this.quote}}
+        {{this.id}}. {{this.quote}}
 
-          <button data-quoteid="{{this.id}}" class="delquote btn btn-sm btn-light">Delete</button>
-        </p>
-      </li>
-      {{/each}}
+        <button data-quoteid="{{this.id}}" class="delquote btn btn-sm btn-light">Delete</button>
+      </p>
+    </li>
+    {{/each}}
     </ul>
   </div>
   <div class="container">
@@ -33,18 +32,12 @@
       <button class="btn btn-primary" type="submit">Save Quote!</button>
     </form>
   </div>
-
-  <body>
-    {{{ body }}}
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
-    <script src="/favQuotes.js"></script>
-  </body>
-
-  </html>
+</main>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+--}}
+<script src="/favQuotes.js"></script>

@@ -60,13 +60,25 @@ module.exports = function (app) {
   })
 
   // Retrieve all quotefavorites
+  /*
+    app.get("/api/quotefavorites", function (req, res) {
+      connection.query("SELECT * FROM quotefavorites;", function (err, data) {
+        if (err) {
+          return res.status(500).end();
+        }
+  
+        res.json(data);
+      });
+    });
+  */
   app.get("/api/quotefavorites", function (req, res) {
-    connection.query("SELECT * FROM quotefavorites;", function (err, data) {
+    db.favQuote.findAll({}).then(function (err, data) {
       if (err) {
         return res.status(500).end();
       }
-
-      res.json(data);
+      res.json(results);
+      console.log("KJS----->findAll, User data:", data);
     });
   });
+
 };
